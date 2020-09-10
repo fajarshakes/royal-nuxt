@@ -1,18 +1,7 @@
-
 export default {
-  /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
   mode: 'universal',
   /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
-  target: 'server',
-  /*
   ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
     title: process.env.npm_package_name || '',
@@ -23,47 +12,52 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    
+    //TAMBAHKAN CODE INI UNTUK MENAMBAHKAN EKSTERNAL JAVASCRIPT
+    script: [
+      { src: "/vendor/jquery/jquery.min.js" },
+      { src: "/vendor/bootstrap/js/bootstrap.bundle.min.js" },
+      { src: "/vendor/jquery-easing/jquery.easing.min.js" },
+      { src: "/js/sb-admin-2.min.js" }
     ]
   },
   /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#fff' },
+  /*
   ** Global CSS
   */
+  
+  //DAN LOAD FILE CSS DI DALAM ATTRIBUTE INI
   css: [
+    '@/assets/vendor/fontawesome-free/css/all.min.css',
+    '@/assets/css/sb-admin-2.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
   ],
   /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
-  components: true,
-  /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
   ],
   /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {},
-  /*
   ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend (config, ctx) {
+    }
   }
 }
